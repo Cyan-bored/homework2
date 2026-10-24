@@ -62,6 +62,9 @@ MODEL_NAME=deepseek-chat
 ### 3. 运行
 
 ```bash
+# 先进入代码目录
+cd code
+
 # 单次执行一个需求
 python main.py "实现一个函数判断正整数是否为质数，并列出不超过 n 的所有质数"
 
@@ -113,16 +116,17 @@ $ python main.py --demo
 
 ```
 SEWorkflow/
-├── main.py            # 命令行入口（单次 / 交互 / --demo），打印执行日志与交付报告
-├── workflow.py        # Workflow 编排：LangGraph StateGraph（节点 + 边 + 条件路由）
-├── agents.py          # 三个专业化 Agent 的 Prompt 与 LLM 构建
-├── tools.py           # 工具集（复用项目1：python_execute / read_file / list_files / search_code）
-├── config.py          # 配置层（.env 加载，复用项目1并新增 Workflow 参数）
-├── output/            # 生成代码的保存目录（运行后自动创建）
-├── requirements.txt   # Python 依赖
 ├── README.md          # 项目说明（本文件）
 ├── Design.md          # 设计文档
-└── .env.example       # 环境变量模板
+└── code/              # 代码目录
+    ├── main.py        # 命令行入口（单次 / 交互 / --demo），打印执行日志与交付报告
+    ├── workflow.py    # Workflow 编排：LangGraph StateGraph（节点 + 边 + 条件路由）
+    ├── agents.py      # 三个专业化 Agent 的 Prompt 与 LLM 构建
+    ├── tools.py       # 工具集（复用项目1：python_execute / read_file / list_files / search_code）
+    ├── config.py      # 配置层（.env 加载，复用项目1并新增 Workflow 参数）
+    ├── requirements.txt   # Python 依赖
+    ├── .env.example   # 环境变量模板
+    └── output/        # 生成代码的保存目录（运行后自动创建）
 ```
 
 ## 六、常见问题
